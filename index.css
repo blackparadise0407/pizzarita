@@ -77,6 +77,10 @@ header {
   transform: translateY(25%);
 }
 
+#menu {
+  background-color: #222222;
+}
+
 .menu-toggle {
   color: var(--main-font-color);
   font-size: 2.4rem;
@@ -162,12 +166,49 @@ header {
 .hero {
   width: 100%;
   height: 100vh;
-  background: url(./assets/images/bg.jpg) center no-repeat;
-  background-size: cover;
+  /* background: url(./assets/images/bg.jpg) center no-repeat;
+  background-size: cover; */
   display: flex;
   text-align: center;
   align-items: center;
 }
+
+/* BGVIDEO START */
+
+#videoBG {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: -3%;
+  left: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #videoBG {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #videoBG {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  #videoBG {
+    display: none;
+  }
+  .hero {
+    background: url(./assets/images/bg.jpg) center no-repeat;
+    background-size: cover;
+  }
+}
+
+/* BGVIDEO ENDS */
 
 .sub-headline {
   font-size: 8.5rem;
@@ -231,10 +272,10 @@ header {
   width: 100%;
   max-width: 3rem;
   height: 0.25rem;
-  background-color: #fff;
+  background-color: var(--main-font-color);
   position: relative;
   transform: rotate(45deg);
-  animation: spin infinite 2s;
+  animation: spin infinite 3.5s;
   animation-timing-function: linear;
 }
 
@@ -244,7 +285,7 @@ header {
   position: absolute;
   max-width: 3rem;
   height: 0.25rem;
-  background-color: #fff;
+  background-color: var(--main-font-color);
   transform: translateX(-50%) rotate(90deg);
 }
 
@@ -438,7 +479,7 @@ header {
 /* FOOTER */
 footer {
   padding: 7.8rem;
-  background-color: var(--main-font-color);
+  background-color: #fa975e9c;
   color: #fff;
   text-align: center;
   position: relative;
